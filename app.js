@@ -27,7 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/problem',function()
 {
-throw new Error("oops!! Someting went wrong")
+ throw new Error("oops!! Someting went wrong");
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,7 +40,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   
-  appInsights.defaultClient..trackException({exception : err});
+  appInsights.defaultClient.trackException({exception : err});
   // render the error page
   res.status(err.status || 500);
   res.render('error');
